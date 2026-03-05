@@ -1,4 +1,4 @@
-public class Tortoise {
+public class Tortoise extends Reptile {
     private boolean coldBlooded;
     private String skinType;
     private boolean tail;
@@ -15,19 +15,19 @@ public class Tortoise {
         this.wings = 0;
     }
 
-    private void move() {
+    public void move() {
         System.out.println("This animal walks");
     }
 
-    private void eat() {
+    public void eat() {
         System.out.println("This animal is a herbivore");
     }
 
-    private void birth() {
+    public void birth() {
         System.out.println("This animal lays eggs");
     }
 
-    private void hibernate() {
+    public void hibernate() {
         System.out.println("This animal hibernates");
     }
 
