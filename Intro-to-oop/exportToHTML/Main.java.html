@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">public class </span><span class="s1">Main </span><span class="s2">{</span>
+
+    <span class="s0">public </span><span class="s1">Main</span><span class="s2">() {</span>
+        <span class="s1">Bank myBank </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Bank</span><span class="s2">();</span>
+        <span class="s0">boolean </span><span class="s1">loggedIn </span><span class="s2">= </span><span class="s0">false</span><span class="s2">;</span>
+        <span class="s0">boolean </span><span class="s1">quitting </span><span class="s2">= </span><span class="s0">false</span><span class="s2">;</span>
+        <span class="s0">int </span><span class="s1">accountNo </span><span class="s2">= -</span><span class="s3">1</span><span class="s2">;</span>
+
+        <span class="s0">while </span><span class="s2">(!</span><span class="s1">loggedIn </span><span class="s2">&amp;&amp; !</span><span class="s1">quitting</span><span class="s2">) {</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Do you have an account? (y/n/quit)&quot;</span><span class="s2">);</span>
+            <span class="s1">String response </span><span class="s2">= </span><span class="s1">Console</span><span class="s2">.</span><span class="s1">readLine</span><span class="s2">();</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">();</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">response</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s4">&quot;y&quot;</span><span class="s2">)) {</span>
+                <span class="s1">accountNo </span><span class="s2">= </span><span class="s1">myBank</span><span class="s2">.</span><span class="s1">login</span><span class="s2">();</span>
+                <span class="s0">if </span><span class="s2">(</span><span class="s1">accountNo </span><span class="s2">!= -</span><span class="s3">1</span><span class="s2">)</span>
+                    <span class="s1">loggedIn </span><span class="s2">= </span><span class="s0">true</span><span class="s2">;</span>
+            <span class="s2">}</span>
+            <span class="s0">else if </span><span class="s2">(</span><span class="s1">response</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s4">&quot;n&quot;</span><span class="s2">))</span>
+                <span class="s1">myBank</span><span class="s2">.</span><span class="s1">addAccount</span><span class="s2">();</span>
+            <span class="s0">else if </span><span class="s2">(</span><span class="s1">response</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s4">&quot;quit&quot;</span><span class="s2">))</span>
+                <span class="s1">quitting </span><span class="s2">= </span><span class="s0">true</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s0">while </span><span class="s2">(!</span><span class="s1">quitting</span><span class="s2">) {</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span>
+                    <span class="s4">&quot;Press 1 to check your balance</span><span class="s0">\n</span><span class="s4">Press 2 to deposit money</span><span class="s0">\n</span><span class="s4">Press 3 to withdraw money</span><span class="s0">\n</span><span class="s4">Press 4 to exit:</span><span class="s0">\n</span><span class="s4">&quot;</span><span class="s2">);</span>
+            <span class="s1">String option </span><span class="s2">= </span><span class="s1">Console</span><span class="s2">.</span><span class="s1">readLine</span><span class="s2">();</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">();</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">option</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s4">&quot;1&quot;</span><span class="s2">))</span>
+                <span class="s1">myBank</span><span class="s2">.</span><span class="s1">checkBalance</span><span class="s2">(</span><span class="s1">accountNo</span><span class="s2">);</span>
+            <span class="s0">else if </span><span class="s2">(</span><span class="s1">option</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s4">&quot;2&quot;</span><span class="s2">)) {</span>
+                <span class="s1">myBank</span><span class="s2">.</span><span class="s1">deposit</span><span class="s2">(</span><span class="s1">accountNo</span><span class="s2">);</span>
+                <span class="s1">myBank</span><span class="s2">.</span><span class="s1">checkBalance</span><span class="s2">(</span><span class="s1">accountNo</span><span class="s2">);</span>
+            <span class="s2">}</span>
+            <span class="s0">else if </span><span class="s2">(</span><span class="s1">option</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s4">&quot;3&quot;</span><span class="s2">)) {</span>
+                <span class="s1">myBank</span><span class="s2">.</span><span class="s1">withdraw</span><span class="s2">(</span><span class="s1">accountNo</span><span class="s2">);</span>
+                <span class="s1">myBank</span><span class="s2">.</span><span class="s1">checkBalance</span><span class="s2">(</span><span class="s1">accountNo</span><span class="s2">);</span>
+            <span class="s2">}</span>
+            <span class="s0">else if </span><span class="s2">(</span><span class="s1">option</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s4">&quot;4&quot;</span><span class="s2">))</span>
+                <span class="s1">quitting </span><span class="s2">= </span><span class="s0">true</span><span class="s2">;</span>
+            <span class="s0">else</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Invalid option selected&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">();</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s0">new </span><span class="s1">Main</span><span class="s2">();</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
